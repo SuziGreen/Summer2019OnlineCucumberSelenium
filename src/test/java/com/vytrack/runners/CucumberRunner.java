@@ -7,7 +7,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "C:\\Users\\stata\\IdeaProjects\\Summer2019OnlineCucumberSelenium\\src\\test\\resources\\features"
+        features = "src\\test\\resources\\features",
+        glue="com\\vytrack\\step_definitions"
 )
 public class CucumberRunner {
+
 }
