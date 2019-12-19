@@ -29,13 +29,23 @@ public class Driver {
             switch (browser){
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
-                    //optional   (true) or (false)
-                    //to run tests without interface, set to true
-                    ChromeOptions chromeOptions = new ChromeOptions();
-                    chromeOptions.setHeadless(false);
-                    //optional    (true) or (false)
-                    driver = new ChromeDriver(chromeOptions);   //insert chromeOptions
+                    //to configure chrome browser for tests
+                    driver = new ChromeDriver();
                     break;
+                case "chrome_headless":
+                    WebDriverManager.chromedriver().setup();
+                    //to configure chrome browser for tests
+                    ChromeOptions options = new ChromeOptions();
+                    //to run tests without interface, set to true
+                    options.setHeadless(true);
+                    driver = new ChromeDriver(options);
+                    break;
+
+
+
+
+
+
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
                     driver = new FirefoxDriver();
