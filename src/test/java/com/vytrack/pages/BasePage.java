@@ -119,6 +119,7 @@ public class BasePage {
     public String getPageSubTitle() {
         //ant time we are verifying page name, or page subtitle, loader mask appears
         waitUntilLoaderMaskDisappear();
+        BrowserUtils.wait(10);
         BrowserUtils.waitForStaleElement(pageSubTitle);
         return pageSubTitle.getText();
     }
